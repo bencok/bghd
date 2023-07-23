@@ -1,0 +1,37 @@
+.bghd, .bgft {
+  position: absolute;
+  width: 100vw;
+  left: calc(50% - 50vw);
+  z-index: -1;
+  height: 50%;
+  pointer-events: none;
+  max-height: 50vh;
+}
+.bghd:after {
+  background: -webkit-gradient(linear,left top,left bottom,from(rgba(0,0,0,0)),to(var(--body)));
+  background: linear-gradient(rgba(0,0,0,0) 0%,#0e0f16 100%);
+}
+.bghd:before {
+  background: -webkit-gradient(linear,left top,left bottom,from(var(--body)),to(rgba(0,0,0,0)));
+  background: linear-gradient(#0e0f16 0%,rgba(0,0,0,0) 100%);
+  height: 10rem;
+}
+.bghd:before, .bghd:after, .bgft:before, .bgft:after {
+  content: '';
+}
+.bghd img {
+  opacity: .4;
+  z-index: -1;
+}
+.bghd img, .bghd:before, .bghd:after, .bgft img, .bgft:before, .bgft:after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: 50% 5%;
+  object-position: 50% 5%;
+  content: '';
+}
